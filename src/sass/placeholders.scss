@@ -1,0 +1,16 @@
+%btn-success {
+        @include font-YanoneKaffeesatz(19px, #fff, false, capitalize, 0.4px, false);
+        color: #fff;
+        padding: 5px 34px;
+        margin-left: 206px;
+        &:hover {
+            color: #fff !important;
+        }
+}
+
+%btn-link {
+    @include font-YanoneKaffeesatz(18px, $color-dark-grey, 600, capitalize, 0.4px, false);
+    &:hover {
+        text-decoration: none;
+    }
+}

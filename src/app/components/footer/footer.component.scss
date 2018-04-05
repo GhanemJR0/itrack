@@ -1,0 +1,22 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+footer {
+    @include section-styles(#fff, center, 14px, 12px);
+    border-top: 1px solid #000;
+    h5 {
+        @include font-YanoneKaffeesatz(16px, $color-text-link, false, capitalize, 0.4px, false);
+    }
+    .social {
+        a {
+            color: $color-text-link;
+            i {
+                font-size: 28px;
+                margin-right: 38px;
+                &.fa-slack {
+                    margin-left: 38px;
+                }
+            }
+        }
+    }
+}

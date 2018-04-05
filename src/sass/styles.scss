@@ -1,0 +1,13 @@
+@import './variables';
+@import './mixins';
+@import './placeholders';
+@import '~bootstrap/scss/functions',
+'~bootstrap/scss/variables',
+'~bootstrap/scss/mixins',
+'~bootstrap/scss/print',
+'~bootstrap/scss/reboot',
+'~bootstrap/scss/type';
+
+body {
+    background: $color-section-grey;
+}

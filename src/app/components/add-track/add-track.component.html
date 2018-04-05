@@ -1,0 +1,215 @@
+<section class="form-wrapper">
+  <div class="container">
+
+    <div>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#basicInformation" aria-controls="basicInformation" role="tab" data-toggle="tab">1</a>
+        </li>
+        <li role="presentation">
+          <a href="#trackGoals" aria-controls="trackGoals" role="tab" data-toggle="tab">2</a>
+        </li>
+        <li role="presentation">
+          <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">3</a>
+        </li>
+        <li role="presentation">
+          <a href="#done" aria-controls="done" role="tab" data-toggle="tab">4</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="basicInformation">
+          <div class="new-track">
+            <div class="header">
+              <h2>step 1: basic information</h2>
+            </div>
+            <div class="info-wrapper">
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="info">
+                    <form class="form">
+                      <div class="form-group">
+                        <label for="name">track name:</label>
+                        <input type="text" class="form-control" name="name" id="name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="describe">describe your track:</label>
+                        <textarea class="form-control" id="describe" cols="30" rows="5"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="sel1">select field:</label>
+                        <select class="form-control" id="sel1">
+                          <option>data science</option>
+                          <option>web</option>
+                          <option>big data</option>
+                          <option>blalalalala</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <h3>track image</h3>
+                  <div class="info">
+                    <div class="upload">
+                      <i class="fa fa-upload"></i>
+                      <h4>drop image here or
+                        <a href="#">click here to upload</a>
+                      </h4>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary">next</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="trackGoals">
+          <div class="new-track">
+            <div class="header">
+              <h2>step 2: track goals</h2>
+            </div>
+            <div class="info-wrapper">
+              <div class="info">
+                <form class="form">
+                  <div class="form-group">
+                    <label for="name">who is your target student?</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">what will they learn?</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">why are you making this track?</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                  </div>
+                </form>
+                <a href="#" class="btn btn-primary">next</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="messages">
+          <div class="new-track">
+            <div class="header">
+              <h2>step 3: steps</h2>
+            </div>
+            <div class="info-wrapper">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="chapterHeading">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">
+                      chapter1: chapter name
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseChapter" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="chapterHeading">
+                  <div class="panel-body">
+                    <div class="form-group">
+                      <label for="describe">small describtion for the chapter:</label>
+                      <textarea class="form-control" id="describe" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="info">
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="stepHeading">
+                          <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseStep" aria-expanded="true" aria-controls="collapseStep">
+                              step name
+                            </a>
+                          </h4>
+                        </div>
+                        <div id="collapseStep" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="stepHeading">
+                          <div class="panel-body">
+                            <form class="form">
+                              <div class="form-group">
+                                <label for="name">step's link</label>
+                                <input type="text" class="form-control" name="name" id="name" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="name">how much time will it take?</label>
+                                <input type="text" class="form-control" name="name" id="name" required>
+                              </div>
+                              <div class="form-group">
+                                <label for="sel1">kind of step</label>
+                                <select class="form-control" id="sel1">
+                                  <option>bla</option>
+                                  <option>blala</option>
+                                  <option>blalala</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label for="name">how much will it cost(0 for free)</label>
+                                <input type="text" class="form-control" name="name" id="name" required>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="panel-heading" role="tab" id="stepHeading">
+                            <h4 class="panel-title">
+                              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseStep" aria-expanded="true" aria-controls="collapseStep">
+                                step name
+                              </a>
+                            </h4>
+                          </div>
+                          <a href="#" class="btn btn-success">
+                            <i class="fa fa-plus"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-heading" role="tab" id="chapterHeading">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseChapter" aria-expanded="true" aria-controls="collapseChapter">
+                        chapter1: chapter name
+                      </a>
+                    </h4>
+                  </div>
+                  <a href="#" class="btn btn-success">add a chapter</a>
+                </div>
+              </div>
+              <a href="#" class="btn btn-primary">next</a>
+            </div>
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="done">
+          <div class="new-track">
+            <div class="header">
+              <h2>step 4: congratulation</h2>
+            </div>
+            <div class="info-wrapper">
+              <div class="info">
+                <i class="fa fa-check"></i>
+                <form class="form">
+                  <div class="form-group">
+                    <label for="name">
+                      <i class="fa fa-share"></i>
+                    </label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="https://itrack.com/fron-ends" required>
+                  </div>
+                </form>
+                <a href="#" class="btn btn-primary">finish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  $('#myTabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  });
+
+</script>

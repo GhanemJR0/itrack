@@ -1,0 +1,51 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.dashboard-wrapper {
+  margin-top: 103px;
+  .track {
+    @include section-styles($color-accent, center, 187px, 57px);
+    border: 1px solid #333;
+    border-radius: 10px;
+    h2 {
+      @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+      margin-bottom: 32px;
+    }
+    p {
+      @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
+      padding-left: 152px;
+      padding-right: 152px;
+      margin-bottom: 38px;
+    }
+  }
+  .info-wrapper {
+    padding-left: 30px;
+    .info {
+      border-left: 1px solid $color-dark-grey;
+      padding-left: 13px;
+      margin-bottom: 34px;
+      h5 {
+        @include font-YanoneKaffeesatz(null, $color-bg-grey, false, uppercase, 0.4px, 25px);
+      }
+      h3 {
+        @include font-YanoneKaffeesatz(null, $color-dark-grey, false, capitalize, 0.4px, 25px);
+      }
+      span {
+        @include font-YanoneKaffeesatz(null, $color-dark-grey, false, false, 0.4px, 25px);
+      }
+    }
+  }
+  .btn-primary {
+    @include font-YanoneKaffeesatz(21px, #fff, false, capitalize, 0.4px, false);
+    color: #fff;
+    padding: 5px 34px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 220px;
+    margin-bottom: 30px;
+    &:hover {
+      color: #fff !important;
+    }
+  }
+}

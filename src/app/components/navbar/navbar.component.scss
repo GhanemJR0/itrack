@@ -1,0 +1,51 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+
+.navbar {
+    height: 54px;
+    border:none;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px 2px #ccc;
+    cursor: pointer
+}
+
+.navbar-brand {
+    padding-left: 2%;
+    @include font-Rationale(26px, $color-text-link, false, uppercase, 0.4px, false);
+    &:hover {
+        color: $color-text-link !important;
+    }
+}
+
+ul.navbar-nav li {
+    margin-right: 12px !important;
+}
+
+ul.navbar-nav li a {
+    /* transition: color 0.4s ease 0s !important; */
+    @include font-Rationale(19px, $color-text-link, false, capitalize, 0.4px, false);
+    &.btn-success {
+        color: #fff !important;
+        padding: 5px 14px;
+        &:hover {
+            color: #fff !important;
+        }
+    }
+}
+
+ul.navbar-nav li:hover a {
+    color: $color-text-link-hover !important;
+    /* transition: color 0.4s ease 0s !important; */
+}
+
+.separate-vertical {
+    @include separate-vertical($color-bg-grey, 2px, 27px, 8px,2px, 15px);
+} 
+
+.input-group {
+    width: 23%;
+    margin-left: 270px;   
+    button {
+        border-radius: 0;
+    }
+}

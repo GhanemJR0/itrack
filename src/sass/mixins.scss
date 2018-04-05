@@ -1,0 +1,101 @@
+/* =========================
+============================ SET BACKGROUND IMAGE ===================== */
+
+@mixin BG-Img ($background, $backgroundSize, $backgroundPosition, $position, $height) {
+    background: url($background);
+    background-size: $backgroundSize;
+    background-position: $backgroundPosition;
+    position: $position;
+    height: $height;
+}
+
+/* =========================
+============================ SECTION MAIN STYLES ===================== */
+
+@mixin section-styles($bg: null, $txt-align: null, $top: null, $bottom: null) {
+    @if $bg {
+        background: $bg;
+    }
+    @if $txt-align {
+        text-align: $txt-align;
+    }
+    @if $top {
+        padding-top: $top;
+    }
+    @if $bottom {
+        padding-bottom: $bottom;
+    }
+}
+
+/* =========================
+============================ VERTICAL SEPARATOR ===================== */
+
+@mixin separate-vertical($bg: false, $width: false, $height: false, $top: false,$left: false, $right: false) {
+    display: block;
+    @if $bg {
+        background-color: $bg;
+    }
+    @if $width {
+        width: $width;
+    }
+    @if $height {
+        height: $height;
+    }
+    @if $top {
+        margin-top: $top;
+    }
+    @if $left {
+        margin-left: $left;
+    }
+    @if $right {
+        margin-right: $right;
+    }
+}
+
+/* =========== YanoneKaffeesatz ===========*/
+@mixin font-YanoneKaffeesatz($size: false, $color: false, $font-weight: false, $tt: false, $ls: false, $lh: false) {
+    @import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $color {
+        color: $color;
+    }
+    @if $font-weight {
+        font-weight: $font-weight;
+    }
+    @if $tt {
+        text-transform: $tt;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+}
+
+/* =========== Rationale ===========*/
+@mixin font-Rationale($size: false, $color: false, $font-weight: false, $tt: false, $ls: false, $lh: false) {
+    @import url('https://fonts.googleapis.com/css?family=Rationale');
+    font-family: 'Rationale', sans-serif;
+    @if $size {
+        font-size: $size;
+    }
+    @if $color {
+        color: $color;
+    }
+    @if $font-weight {
+        font-weight: $font-weight;
+    }
+    @if $tt {
+        text-transform: $tt;
+    }
+    @if $ls {
+        letter-spacing: $ls;
+    }
+    @if $lh {
+        line-height: $lh;
+    }
+}

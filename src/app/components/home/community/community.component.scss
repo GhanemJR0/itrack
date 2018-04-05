@@ -1,0 +1,27 @@
+@import '../../../../sass/variables';
+@import '../../../../sass/mixins';
+
+.community-wrapper {
+    @include section-styles($color-dark-grey, center, 70px, 70px);
+    h2 {
+        @include font-YanoneKaffeesatz(false, #000, false, capitalize, 0.4px, false);
+        margin-bottom: 30px;
+    }
+    .btn-info {
+        @include font-YanoneKaffeesatz(19px, #fff, false, capitalize, 0.4px, false);
+        color: #fff;
+        padding: 5px 34px;
+        &:hover {
+            color: #fff !important;
+        }
+    }
+    .member {
+        background-color: $color-section-grey;
+        width: 120px;
+        height: 120px;
+        border-radius: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+    }
+}
