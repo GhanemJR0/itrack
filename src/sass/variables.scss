@@ -2,8 +2,24 @@ $color-accent:#82ddf1;
 $color-dark-grey:#333;
 $color-bg-grey:#9E9E9E;
 $color-section-grey:#ccc;
-
 $color-text: $color-dark-grey;
-
 $color-text-link: $color-dark-grey;
 $color-text-link-hover: $color-accent;
+
+$container-shadow: 0.5rem 0.5rem 2rem 0 rgba(black, 0.2);
+$gutter: 30px;
+$border-width: 4px;
+$dot-diameter: 8px;
+
+/* @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700|Oswald:400,300,700);
+$background: #252827;
+$color-primary: #4298C3;
+$color-light: white;
+$spacing: 50px;
+$radius: 4px;
+$date: 120px;
+$dotborder: 4px;
+$dot: 11px;
+$line: 4px;
+$font-title: 'Oswald', sans-serif;
+$font-text: 'Source Sans Pro', sans-serif; */

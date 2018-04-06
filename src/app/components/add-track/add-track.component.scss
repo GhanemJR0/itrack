@@ -3,10 +3,11 @@
 @import '../../../sass/placeholders';
 .form-wrapper {
   background-color: $color-section-grey;
-  margin-top: 65px;
+  margin-top: 88px;
   .nav-tabs {
     margin-left: auto;
-    margin-right: auto; //width: 196px;
+    margin-right: auto;
+    width: 708px;
     border: none;
     li {
       text-align: center;
@@ -14,7 +15,24 @@
       border-radius: 100px;
       background-color: #fff;
       padding: 11px 18px;
-      margin-right: 30px;
+      margin-right: 130px;
+      position: relative;
+      a {
+        color: $color-dark-grey;
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 130px;
+        height: 2px;
+        background-color: $color-dark-grey;
+        position: absolute;
+        top: 24px;
+        left: 46px;
+      }
+      &:last-child:after {
+        display: none;
+      }
     }
   }
   .new-track {
@@ -113,5 +131,34 @@
         display: block;
       }
     }
+  }
+}
+
+#chapterHeading,
+#stepHeading {
+  input {
+    width: 296px;
+    display: inline-block;
+    border: none; //border-bottom: 1px solid #333;
+    border-radius: 0;
+    padding-left: 4px;
+    margin-left: 10px;
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+  i {
+    float: right;
+  }
+}
+
+.check {
+  text-align: center;
+  input {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
   }
 }

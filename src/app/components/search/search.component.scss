@@ -1,54 +1,121 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
 @import '../../../sass/placeholders';
-
 .search-wrapper {
-    margin-top: 85px;
-    margin-bottom: 38px;
-    .search-header {
-        h5 {
-            @include font-YanoneKaffeesatz(20px, $color-dark-grey, false, capitalize, 0.4px, false);
-        }
+  margin-top: 85px;
+  margin-bottom: 38px;
+  .search-header {
+    h5 {
+      @include font-YanoneKaffeesatz(24px, $color-dark-grey, false, capitalize, 0.4px, 37px);
     }
-    .searched-tracks {
-        margin-top: 60px;
-        .sidebar {
-            @include section-styles(#fff, center, 36px, 30px);
-            height: 300px;
+    .input-group {
+      width: 67%;
+      margin-left: 169px;
+      .form-control {
+        border-radius: 8px;
+        @include font-Rationale(false, $color-text-link, false, false, 0.4px, false);
+        &::-moz-placeholder {
+          @include font-Rationale(false, $color-text-link, false, capitalize, 0.4px, false);
         }
-        .tracks-wrapper {
-            @include section-styles(#fff, center, 10px, 40px);
-            padding-left: 40px;
-            padding-right: 40px;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      .input-group-btn {
+        position: absolute;
+        right: 0;
+        z-index: 9;
+        button {
+          background: transparent;
+          border-radius: 0;
+          &.btn {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .searched-tracks {
+    margin-top: 40px;
+    .sidebar {
+      @include section-styles(#fff, left, 10px, 8px);
+      border: 1px solid $color-dark-grey;
+      .panel {
+        .panel-title {
+          border-bottom: 1px solid $color-dark-grey;
+          padding-bottom: 8px;
+          a {
+            @include font-Rationale(false, $color-text-link, false, capitalize, 0.4px, false);
+            padding-left: 13px;
+            i {
+              float: right;
+              padding-right: 11px;
+            }
+          }
+        }
+        .panel-body {
+          ul {
+            list-style-type: none;
+            padding-left: 14px;
+            margin-bottom: 8px;
+            li {
+              @include font-Rationale(false, $color-text-link, false, capitalize, 0.4px, false);
+              i {
+                float: right;
+                padding-right: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .keywords-wrapper {
+        margin-bottom: 22px;
+        .btn-default {
             border: 1px solid $color-dark-grey;
-            border-radius: 10px;
-            .track {
-                @include section-styles(#fff, center, null, null);
-                border: 0.4px solid $color-section-grey;
-                border-radius: 10px;
-                margin-top: 20px;
-                .header {
-                    @include section-styles($color-bg-grey, null, null, null);
-                    height: 180px;
-                    border-radius: 10px;
-                }
-                .track-info {
-                    @include section-styles(#fff, null, 40px, 20px);
-                    border-radius: 10px;
-                    h4 {
-                        @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                    }
-                    p {
-                        @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
-                        padding-left: 20px;
-                        padding-right: 20px;
-                    }
-                    a {
-                        @include font-YanoneKaffeesatz(18px, $color-dark-grey, 600, capitalize, 0.4px, false); 
-                    }
-                }
+            border-radius: 50px;
+            background: #fff;
+            @include font-Rationale(false, $color-text-link, false, capitalize, 0.4px, false);
+            i {
+                margin-left: 8px;
             }
         }
+        .btn-link {
+            @include font-Rationale(false, $color-text-link, false, capitalize, 0.4px, false);
+        }
     }
-    
+    .tracks-wrapper {
+      @include section-styles(#fff, center, 10px, 40px);
+      padding-left: 40px;
+      padding-right: 40px;
+      border: 1px solid $color-dark-grey;
+      border-radius: 10px;
+      .track {
+        @include section-styles(#fff, center, null, null);
+        border: 0.4px solid $color-section-grey;
+        border-radius: 10px;
+        margin-top: 20px;
+        .header {
+          @include section-styles($color-bg-grey, null, null, null);
+          height: 180px;
+          border-radius: 10px;
+        }
+        .track-info {
+          @include section-styles(#fff, null, 40px, 20px);
+          border-radius: 10px;
+          h4 {
+            @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+          }
+          p {
+            @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          a {
+            @include font-YanoneKaffeesatz(18px, $color-dark-grey, 600, capitalize, 0.4px, false);
+          }
+        }
+      }
+    }
+  }
 }

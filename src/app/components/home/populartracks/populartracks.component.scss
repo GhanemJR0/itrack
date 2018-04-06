@@ -1,33 +1,33 @@
 @import '../../../../sass/variables';
 @import '../../../../sass/mixins';
 .popular-tracks {
-    @include section-styles($color-dark-grey, center, 50px, 50px);
-    h2 {
-        @include font-YanoneKaffeesatz(false, #000, false, capitalize, 0.4px, false);
-        margin-bottom: 40px;
+  @include section-styles($color-dark-grey, center, 50px, 50px);
+  h2 {
+    @include font-YanoneKaffeesatz(false, #000, false, capitalize, 0.4px, false);
+    margin-bottom: 40px;
+  }
+  .track {
+    @include section-styles(#fff, center, null, null);
+    border-radius: 10px;
+    .header {
+      @include section-styles($color-bg-grey, null, null, null);
+      height: 210px;
+      border-radius: 10px;
     }
-    .track {
-        @include section-styles(#fff, center, null, null);
-        border-radius: 10px;
-        .header {
-            @include section-styles($color-bg-grey, null, null, null);
-            height: 210px;
-            border-radius: 10px;
-        }
-        .track-info {
-            @include section-styles(#fff, null, 40px, 20px);
-            border-radius: 10px;
-            h4 {
-                @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-            }
-            p {
-                @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-            a {
-                @include font-YanoneKaffeesatz(18px, $color-dark-grey, 600, capitalize, 0.4px, false); 
-            }
-        }
+    .track-info {
+      @include section-styles(#fff, null, 40px, 20px);
+      border-radius: 10px;
+      h4 {
+        @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+      }
+      p {
+        @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      a {
+        @include font-YanoneKaffeesatz(18px, $color-dark-grey, 600, capitalize, 0.4px, false);
+      }
     }
+  }
 }

@@ -1,10 +1,10 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
-
 .dashboard-wrapper {
   margin-top: 103px;
+  padding-bottom: 70px;
   .track {
-    @include section-styles($color-accent, center, 187px, 57px);
+    @include section-styles($color-accent, center, 187px, 73px);
     border: 1px solid #333;
     border-radius: 10px;
     h2 {
@@ -44,8 +44,223 @@
     display: block;
     width: 220px;
     margin-bottom: 30px;
+    margin-top: 57px;
     &:hover {
       color: #fff !important;
     }
   }
+  .timeline {
+    padding: 0 38px 0 297px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      /* top: 0px;
+      left: calc(33% + 15px); */ //$gutter/2
+      top: 14px;
+      left: calc(49% + 10px);
+      bottom: 61px;
+      width: 2px;
+      background: $color-bg-grey;
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .entry {
+      clear: both;
+      text-align: left;
+      position: relative;
+      .title {
+        margin-bottom: .5em;
+        float: left;
+        width: 33%;
+        padding-right: $gutter;
+        text-align: right;
+        position: relative;
+        /* &:before {
+          content: '';
+          position: absolute;
+          width: $dot-diameter;
+          height: $dot-diameter;
+          border: $border-width solid salmon;
+          background-color: #fff;
+          border-radius: 100%;
+          top: 15%;
+          right: -$dot-diameter;
+          z-index: 99;
+        } */
+        h3 {
+          margin-top: 0;
+          @include font-YanoneKaffeesatz(23px, $color-text, false, capitalize, 0.4px, false);
+        }
+        p {
+          margin: 0; //padding-left: 90px;
+          margin-top: 10px;
+          @include font-YanoneKaffeesatz(false, $color-text, false, false, 0.4px, false);
+        }
+      }
+      .body {
+        float: right;
+        width: 66%;
+        padding-left: 0;
+        margin-bottom: 43px;
+        .contain {
+          display: block;
+          position: relative;
+          padding-left: 18px;
+          margin-bottom: 30px;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          p {
+            @include font-YanoneKaffeesatz(false, $color-text, false, capitalize, 0.4px, false);
+            a {
+              opacity: 0;
+            }
+            &:hover {
+              a {
+                opacity: 1;
+              }
+            }
+          }
+        }
+        /* Hide the browser's default radio button */
+        .contain input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        /* Create a custom radio button */
+        .checkmark {
+          position: absolute;
+          top: 4px;
+          left: -13px;
+          height: 15px;
+          width: 15px;
+          background-color: #eee;
+          border-radius: 50%;
+        }
+        /* On mouse-over, add a grey background color */
+        /* .contain:hover input~.checkmark {
+          background-color: #ccc;
+        } */
+        /* When the radio button is checked, add a blue background */
+        .contain input:checked~.checkmark {
+          background-color: #2196F3;
+        }
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+        /* Show the indicator (dot/circle) when checked */
+        .contain input:checked~.checkmark:after {
+          display: block;
+        }
+        /* Style the indicator (dot/circle) */
+        .contain .checkmark:after {
+          top: 3px;
+          left: 3px;
+          width: 9px;
+          height: 9px;
+          border-radius: 50%;
+          background: white;
+        }
+        p {
+          line-height: 1.4em;
+          &:first-child {
+            margin-top: 0;
+            font-weight: 400;
+          }
+        }
+        ul {
+          color: #aaa;
+          padding-left: 0;
+          list-style-type: none;
+          li:before {
+            content: "–";
+            margin-right: .5em;
+          }
+        }
+      }
+    }
+    .end {
+      h3 {
+        color: #28a745 !important;
+      }
+      span {
+        border: 3px solid #28a745 !important;
+      }
+    }
+  }
+  /* .timeline-wrapper {
+    text-align: center;
+    .timeline {
+      border-left: $line solid $color-primary;
+      border-bottom-right-radius: $radius;
+      border-top-right-radius: $radius;
+      background: fade($color-light, 3%);
+      color: fade(white, 80%);
+      font-family: $font-text;
+      margin: $spacing auto;
+      letter-spacing: 0.5px;
+      position: relative;
+      line-height: 1.4em;
+      font-size: 1.03em;
+      padding: $spacing;
+      list-style: none;
+      text-align: left;
+      font-weight: 100;
+      max-width: 30%;
+      h1,
+      h2,
+      h3 {
+        font-family: $font-title;
+        letter-spacing: 1.5px;
+        font-weight: 100;
+        font-size: 1.4em;
+      }
+      .event {
+        border-bottom: 1px dashed fade($color-light, 10%);
+        padding-bottom: ($spacing * 0.5);
+        margin-bottom: $spacing;
+        position: relative;
+        &:last-of-type {
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border: none;
+        }
+        &:before,
+        &:after {
+          position: absolute;
+          display: block;
+          top: 0;
+        }
+        &:before {
+          left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1;
+          color: fade($color-light, 40%);
+          content: attr(data-date);
+          text-align: right;
+          font-weight: 100;
+          font-size: 0.9em;
+          min-width: $date;
+        }
+        &:after {
+          box-shadow: 0 0 0 $dotborder fade($color-primary, 100%);
+          left: ($spacing + $line + ($dot * 0.35)) * -1;
+          background: lighten($background, 5%);
+          border-radius: 50%;
+          height: $dot;
+          width: $dot;
+          content: "";
+          top: 5px;
+        }
+      }
+    }
+  } */
 }

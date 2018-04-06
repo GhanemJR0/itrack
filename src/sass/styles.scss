@@ -7,7 +7,25 @@
 '~bootstrap/scss/print',
 '~bootstrap/scss/reboot',
 '~bootstrap/scss/type';
-
 body {
-    background: $color-section-grey;
+  background: $color-section-grey;
+}
+
+a {
+  text-decoration: none !important;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn,
+.btn-default,
+.btn-link,
+.btn-success,
+.btn-primary,
+.btn-info {
+  &:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
 }

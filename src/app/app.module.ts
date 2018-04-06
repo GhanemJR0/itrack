@@ -18,6 +18,9 @@ import { SignupComponent } from './components/user/signup/signup.component';
 import { AddTrackComponent } from './components/add-track/add-track.component';
 import { TrackProfileComponent } from './components/track-profile/track-profile.component';
 import { TrackDashboardComponent } from './components/user/track-dashboard/track-dashboard.component';
+import { TrackInformationComponent } from './components/user/track-dashboard/track-information/track-information.component';
+import { SuggestedLinksComponent } from './components/user/track-dashboard/suggested-links/suggested-links.component';
+import { TrackSyllabusComponent } from './components/user/track-dashboard/track-syllabus/track-syllabus.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -46,7 +49,10 @@ const appRoutes: Routes = [
     SignupComponent,
     AddTrackComponent,
     TrackProfileComponent,
-    TrackDashboardComponent
+    TrackDashboardComponent,
+    TrackInformationComponent,
+    SuggestedLinksComponent,
+    TrackSyllabusComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  items: any[];
+  techs: any[];
+
+  constructor() {
+    this.items = ['data science', 'data science', 'data science', 'data science'];
+    this.techs = ['data sciences', 'data sciences', 'data sciences', 'data sciences'];
+  }
 
   ngOnInit() {
   }

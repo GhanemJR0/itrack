@@ -12,11 +12,11 @@
         </div>
 
         <div class="tab">
-          <button class="tablinks" onclick="openCity(event, 'links')" id="defaultOpen">
+          <button class="tablinks" (click)="openLinks()">
             <i class="fa fa-link"></i>suggested links</button>
-          <button class="tablinks" onclick="openCity(event, 'syllabus')">
+          <button class="tablinks" (click)="openSyllabus()">
             <i class="fa fa-clone"></i>track syllabus</button>
-          <button class="tablinks" onclick="openCity(event, 'info')">
+          <button class="tablinks" (click)="open(link)">
             <i class="fa fa-info"></i>track information</button>
         </div>
 
@@ -26,188 +26,9 @@
     <div class="col-sm-8">
       <div class="tabs-pages">
 
-        <!-- <div id="links" class="tabcontent">
-          <h3>suggested links</h3>
-
-          <div class="links-wrapper">
-            <div class="header">
-              <div class="row">
-                <div class="col-sm-6 col-xs-12">
-                  <h2>step name</h2>
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                  <a href="#" class="btn btn-link">
-                    <i class="fa fa-link"></i> 9999</a>
-                </div>
-              </div>
-            </div>
-            <div class="links">
-              <div class="row">
-                <div class="col-sm-9 col-xs-12">
-                  <div class="link">
-                    <span>
-                      <i class="fa fa-play-circle-o"></i>
-                    </span>
-                    <a href="https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8" target="_blank">
-                      https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3 col-xs-12">
-                  <div class="link-icon">
-                    <span class="link-count">
-                      <i class="fa fa-link"></i> 9999</span>
-                    <span>
-                      <i class="fa fa-refresh"></i>
-                    </span>
-                    <span>
-                      <i class="fa fa-paper-plane-o"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="links">
-              <div class="row">
-                <div class="col-sm-9 col-xs-12">
-                  <div class="link">
-                    <span>
-                      <i class="fa fa-play-circle-o"></i>
-                    </span>
-                    <a href="https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8" target="_blank">
-                      https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3 col-xs-12">
-                  <div class="link-icon">
-                    <span class="link-count">
-                      <i class="fa fa-link"></i> 9999</span>
-                    <span>
-                      <i class="fa fa-refresh"></i>
-                    </span>
-                    <span>
-                      <i class="fa fa-paper-plane-o"></i>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- <div id="syllabus" class="tabcontent">
-          <h3>track syllabus</h3>
-
-          <div class="links-wrapper">
-            <div class="header">
-              <div class="row">
-                <div class="col-sm-9 col-xs-12">
-                  <h2>chapter name</h2>
-                </div>
-                <div class="col-sm-3 col-xs-12">
-                  <div class="icons">
-                    <i class="fa fa-times-circle-o"></i>
-                    <i class="fa fa-pencil-square-o"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="links">
-              <div class="row">
-                <div class="col-sm-9 col-xs-12">
-                  <div class="link">
-                    <span>
-                      <i class="fa fa-play-circle-o"></i>
-                    </span>
-                    <a href="https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8" target="_blank">
-                      step name
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3 col-xs-12">
-                  <div class="link-icon">
-                    <div class="icons">
-                      <i class="fa fa-times-circle-o"></i>
-                      <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="links">
-              <div class="row">
-                <div class="col-sm-9 col-xs-12">
-                  <div class="link">
-                    <span>
-                      <i class="fa fa-play-circle-o"></i>
-                    </span>
-                    <a href="https://www.youtube.com/watch?v=mWRsgZuwf_8&list=RDMMmWRsgZuwf_8" target="_blank">
-                      step name
-                    </a>
-                  </div>
-                </div>
-                <div class="col-sm-3 col-xs-12">
-                  <div class="link-icon">
-                    <div class="icons">
-                      <i class="fa fa-times-circle-o"></i>
-                      <i class="fa fa-pencil-square-o"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <div id="info" class="tabcontent">
-          <h3>track information</h3>
-            <div class="new-track">
-                <div class="header">
-                  <h2>general information</h2>
-                </div>
-                <div class="info-wrapper">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <div class="info">
-                        <form class="form">
-                          <div class="form-group">
-                            <label for="name">track name:</label>
-                            <input type="text" class="form-control" name="name" id="name" required>
-                          </div>
-                          <div class="form-group">
-                            <label for="describe">describe your track:</label>
-                            <textarea class="form-control" id="describe" cols="30" rows="5"></textarea>
-                          </div>
-                          <div class="form-group">
-                            <label for="sel1">select field:</label>
-                            <select class="form-control" id="sel1">
-                              <option>data science</option>
-                              <option>web</option>
-                              <option>big data</option>
-                              <option>blalalalala</option>
-                            </select>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <h3>track image</h3>
-                      <div class="info">
-                        <div class="upload">
-                          <i class="fa fa-upload"></i>
-                          <h4>drop image here or
-                            <a href="#">click here to upload</a>
-                          </h4>
-                        </div>
-                      </div>
-                      <a href="#" class="btn btn-primary">save</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-        </div>
+        <app-suggested-links [hidden]="hide"></app-suggested-links>
+        <app-track-syllabus [hidden]="hide"></app-track-syllabus>
+        <app-track-information [hidden]="true"></app-track-information>
 
       </div>
     </div>
@@ -215,25 +36,3 @@
   </div>
 
 </section>
-
-<script>
-  $(function () {
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-  });
-
-</script>
