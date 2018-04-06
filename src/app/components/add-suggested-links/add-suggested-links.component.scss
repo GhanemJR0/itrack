@@ -1,0 +1,54 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+@import '../../../sass/placeholders';
+.form-wrapper {
+  margin-top: 46px;
+  overflow-x: hidden;
+  .new-link {
+    @include section-styles(#fff, null, 10px, 10px);
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 60px;
+    .header {
+      border-bottom: 1px solid #000;
+      padding-left: 60px;
+      padding-right: 60px;
+      h3 {
+        @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+      }
+    }
+    .info-wrapper {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px;
+      .info {
+        border-radius: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        .form {
+          label {
+            @include font-YanoneKaffeesatz(18px, $color-dark-grey, false, capitalize, 0.4px, false);
+          }
+          select {
+            @include font-YanoneKaffeesatz(17px, $color-dark-grey, false, capitalize, 0.3px, false);
+          }
+        }
+      }
+    }
+    a {
+      &.btn-primary {
+        @include font-YanoneKaffeesatz(18px, #fff, false, capitalize, 0.3px, false);
+        width: 200px;
+        margin-top: 18px;
+        margin-top: 38px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@ import { TrackDashboardComponent } from './components/user/track-dashboard/track
 import { TrackInformationComponent } from './components/user/track-dashboard/track-information/track-information.component';
 import { SuggestedLinksComponent } from './components/user/track-dashboard/suggested-links/suggested-links.component';
 import { TrackSyllabusComponent } from './components/user/track-dashboard/track-syllabus/track-syllabus.component';
+import { AddSuggestedLinksComponent } from './components/add-suggested-links/add-suggested-links.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -30,7 +31,11 @@ const appRoutes: Routes = [
   {path: 'user/login', component: LoginComponent},
   {path: 'user/track-dashboard', component: TrackDashboardComponent},
   {path: 'add-track', component: AddTrackComponent},
-  {path: 'track-profile', component: TrackProfileComponent}
+  {path: 'track-profile', component: TrackProfileComponent},
+  {path: 'track-profile/add-suggested-links', component: AddSuggestedLinksComponent},
+  {path: 'user/track-dashboard/suggested-links', component: SuggestedLinksComponent},
+  {path: 'user/track-dashboard/track-syllabus', component: TrackSyllabusComponent},
+  {path: 'user/track-dashboard/track-information', component: TrackInformationComponent}
 ];
 
 @NgModule({
@@ -52,7 +57,8 @@ const appRoutes: Routes = [
     TrackDashboardComponent,
     TrackInformationComponent,
     SuggestedLinksComponent,
-    TrackSyllabusComponent
+    TrackSyllabusComponent,
+    AddSuggestedLinksComponent
   ],
   imports: [
     BrowserModule,

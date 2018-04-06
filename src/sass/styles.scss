@@ -29,3 +29,10 @@ a {
     box-shadow: none !important;
   }
 }
+
+select, option {
+  &:focus {
+    outline: 0 !important;
+    border: none !important;
+  }
+}

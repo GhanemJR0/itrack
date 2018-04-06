@@ -12,26 +12,21 @@
         </div>
 
         <div class="tab">
-          <button class="tablinks" (click)="openLinks()">
+          <button class="tablinks" [routerLink]="['//user/track-dashboard/suggested-links']">
             <i class="fa fa-link"></i>suggested links</button>
-          <button class="tablinks" (click)="openSyllabus()">
+          <button class="tablinks"[routerLink]="['//user/track-dashboard/track-syllabus']">
             <i class="fa fa-clone"></i>track syllabus</button>
-          <button class="tablinks" (click)="open(link)">
+          <button class="tablinks"[routerLink]="['//user/track-dashboard/track-information']">
             <i class="fa fa-info"></i>track information</button>
         </div>
 
       </div>
     </div>
 
-    <div class="col-sm-8">
+    <!-- <div class="col-sm-8">
       <div class="tabs-pages">
-
-        <app-suggested-links [hidden]="hide"></app-suggested-links>
-        <app-track-syllabus [hidden]="hide"></app-track-syllabus>
-        <app-track-information [hidden]="true"></app-track-information>
-
       </div>
-    </div>
+    </div> -->
 
   </div>
 
