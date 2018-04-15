@@ -1,34 +1,49 @@
 <section class="login-wrapper">
-    <div class="container">
+  <div class="container">
 
-        <h2>signin</h2>
+    <h2>signin</h2>
 
-        <div class="login">
+    <div class="login">
 
-        <form class="form">
-            <div class="form-group">
-                    <label for="email">email:</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">password:</label>
-                <input type="password" class="form-control" name="password" id="password" required>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox"> Remember me</label>
-            </div>
-            <a href="#">forget password?</a>
-            <a href="#" class="btn btn-primary">login</a>
-        </form>
-
-        <div class="social-login">
-            <h4>or sign in by</h4>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
+      <form class="form" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="email">email:</label>
+          <input type="email" class="form-control" name="email" #email="ngModel" ngModel id="email" required pattern="[^ @]*@[^ @]*">
+          <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+            <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
+            <p class="alert alert-danger" *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
+          </div>
         </div>
-                
+        <div class="form-group">
+          <label for="psw">password:</label>
+          <input type="password" class="form-control" name="password" #password="ngModel" ngModel id="psw" required minlength="8">
+          <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+            <p class="alert alert-danger" *ngIf="password.errors.required">password is required</p>
+            <p class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be 8 characters long</p>
+          </div>
         </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me</label>
+        </div>
+        <a href="#">forget password?</a>
+        <button class="btn btn-primary" [disabled]="form.invalid">login</button>
+      </form>
+
+      <div class="social-login">
+        <h4>or sign in by</h4>
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-google-plus"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
 
     </div>
+
+  </div>
 </section>

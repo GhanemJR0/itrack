@@ -36,3 +36,16 @@ select, option {
     border: none !important;
   }
 }
+
+.form-control-feedback {
+  @include font-YanoneKaffeesatz(18px, $color-dark-grey, false, capitalize, 0.4px, false);
+  .alert {
+      padding: 0;
+      padding-top: 14px;
+  }
+  .alert-danger {
+      border: none;
+      background: none;
+      color: #ec1313;
+  }
+}

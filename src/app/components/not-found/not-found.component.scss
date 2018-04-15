@@ -1,0 +1,15 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+@import '../../../sass/placeholders';
+.not-found {
+  @include section-styles($color-dark-grey, center, 190px, 188px);
+  h2 {
+    font-size: 100px;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+  p {
+    @include font-YanoneKaffeesatz(30px, #fff, false, capitalize, 0.4px, false);
+    margin-bottom: 0;
+  }
+}

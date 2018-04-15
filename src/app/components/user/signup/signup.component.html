@@ -1,34 +1,59 @@
 <section class="signup-wrapper">
-    <div class="container">
+  <div class="container">
 
-        <h2>signup</h2>
+    <h2>signup</h2>
 
-        <div class="signup">
+    <div class="signup">
 
-        <form class="form">
-            <div class="form-group">
-                    <label for="email">email:</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">password:</label>
-                <input type="password" class="form-control" name="password" id="password" required>
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox"> Remember me</label>
-            </div>
-            <a href="#">forget password?</a>
-            <a href="#" class="btn btn-primary">signup</a>
-        </form>
-
-        <div class="social-signup">
-            <h4>or signup by</h4>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-google-plus"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
+      <form class="form" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="name">name:</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="userName" #name="ngModel" id="name" required minlength="5">
+          <div class="form-control-feedback" *ngIf="name.errors && (name.dirty || name.touched)">
+            <p class="alert alert-danger" *ngIf="name.errors.required">Name is required</p>
+            <p class="alert alert-danger" *ngIf="name.errors.minlength">Name must be 5 character</p>
+          </div>
         </div>
-                
+        <div class="form-group">
+          <label for="mail">email:</label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="userEmail" #email="ngModel" id="mail" required pattern="[^ @]*@[^ @]*">
+          <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+            <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
+            <p class="alert alert-danger" *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
+          </div>
         </div>
+        <div class="form-group">
+          <label for="psw">password:</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="userPassword" #password="ngModel" id="psw" required minlength="8">
+          <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+            <p class="alert alert-danger" *ngIf="password.errors.required">password is required</p>
+            <p class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be 8 characters long</p>
+          </div>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox">Remember me</label>
+        </div>
+        <a href="#">forget password?</a>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">signup</button>
+      </form>
+
+      <pre>{{form.value | json}}</pre>
+
+      <div class="social-signup">
+        <h4>or signup by</h4>
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-google-plus"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
 
     </div>
+
+  </div>
 </section>

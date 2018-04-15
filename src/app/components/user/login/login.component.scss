@@ -24,7 +24,7 @@
             label {
                 @include font-YanoneKaffeesatz(18px, $color-dark-grey, false, capitalize, 0.4px, false);
             }
-            a {
+            button, a {
                 @include font-YanoneKaffeesatz(17px, #ccc, false, capitalize, 0.3px, false);
                 &.btn-primary {
                     width: 294px;

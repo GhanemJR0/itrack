@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, Validators, FormBuilder } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -22,6 +24,7 @@ import { TrackInformationComponent } from './components/user/track-dashboard/tra
 import { SuggestedLinksComponent } from './components/user/track-dashboard/suggested-links/suggested-links.component';
 import { TrackSyllabusComponent } from './components/user/track-dashboard/track-syllabus/track-syllabus.component';
 import { AddSuggestedLinksComponent } from './components/add-suggested-links/add-suggested-links.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,7 +38,8 @@ const appRoutes: Routes = [
   {path: 'track-profile/add-suggested-links', component: AddSuggestedLinksComponent},
   {path: 'user/track-dashboard/suggested-links', component: SuggestedLinksComponent},
   {path: 'user/track-dashboard/track-syllabus', component: TrackSyllabusComponent},
-  {path: 'user/track-dashboard/track-information', component: TrackInformationComponent}
+  {path: 'user/track-dashboard/track-information', component: TrackInformationComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -58,10 +62,12 @@ const appRoutes: Routes = [
     TrackInformationComponent,
     SuggestedLinksComponent,
     TrackSyllabusComponent,
-    AddSuggestedLinksComponent
+    AddSuggestedLinksComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

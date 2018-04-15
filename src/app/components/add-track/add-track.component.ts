@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 @Component({
   selector: 'app-add-track',
   templateUrl: './add-track.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddTrackComponent implements OnInit {
 
+  children: any[];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addChapterInputs() {
+    this.children.push({ 'chapterName': '' });
   }
 
 }
