@@ -42,7 +42,9 @@ export class SignupComponent implements OnInit {
             }
           }
       }`;
-      request('http://192.168.43.226:5000/graphql', query).then(data => console.log(data));
+      request('http://192.168.43.226:5000/graphql', query).then((data) => {
+        localStorage.setItem('user', JSON.stringify(data));
+      });
       console.log('form submitted', this.userName, this.userEmail, this.userPassword);
       this.f.reset();
   }
