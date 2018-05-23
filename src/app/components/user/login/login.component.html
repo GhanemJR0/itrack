@@ -3,12 +3,15 @@
 
     <h2>signin</h2>
 
+    <!-- <div class="alert alert-danger" role="alert" *ngIf="error">Invalid Email Or Password</div> -->
+    <!-- <div class="alert alert-info" role="alert" *ngIf="signup">please sign in to procced</div> -->
+
     <div class="login">
 
       <form class="form" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
           <label for="email">email:</label>
-          <input type="email" class="form-control" name="email" #email="ngModel" ngModel id="email" required pattern="[^ @]*@[^ @]*">
+          <input type="email" class="form-control" name="email" [(ngModel)]="userEmail" #email="ngModel" id="mail" required pattern="[^ @]*@[^ @]*">
           <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
             <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
             <p class="alert alert-danger" *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
@@ -16,7 +19,8 @@
         </div>
         <div class="form-group">
           <label for="psw">password:</label>
-          <input type="password" class="form-control" name="password" #password="ngModel" ngModel id="psw" required minlength="8">
+          <input type="password" class="form-control" name="password" [(ngModel)]="userPassword" #password="ngModel" id="psw" required
+            minlength="8">
           <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
             <p class="alert alert-danger" *ngIf="password.errors.required">password is required</p>
             <p class="alert alert-danger" *ngIf="password.errors?.minlength">Password must be 8 characters long</p>
@@ -32,12 +36,12 @@
 
       <div class="social-login">
         <h4>or sign in by</h4>
-        <a href="#">
+        <!-- <a href="#">
           <i class="fa fa-facebook"></i>
         </a>
         <a href="#">
           <i class="fa fa-google-plus"></i>
-        </a>
+        </a> -->
         <a href="#">
           <i class="fa fa-github"></i>
         </a>

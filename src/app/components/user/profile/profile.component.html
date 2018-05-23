@@ -7,16 +7,16 @@
       <div class="personal-info">
           <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
         <div class="header">
-            <a href="#" class="btn btn-default">edit profile</a> 
+            <a [routerLink]="['/edit-profile/'+id]" class="btn btn-default">edit profile</a> 
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-xs-12">
-                    <img src="assets/imgs/user-profile-photo.jpg" alt="james may angry and wearing glasses">
+                    <img [src]="trustedImg" alt="profile photo">
                   </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
                   <h2 class="username">{{userName}}</h2>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                  <h4 class="user-country">cairo, egypt</h4>
+                  <h4 class="user-country">{{userEmail}}</h4>
               </div>
             </div>
         </div>
@@ -37,8 +37,9 @@
                     </div>
                 </div>
               </div>
-              <p class="personal-statement">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industryLorem Ipsum is simply dummy text of the printing and typesetting industry. Ipsum is simply dummy text of the printing and typesetting industry. 
+              <p class="bios">
+                <span *ngIf="!userBios" >Bio goes here</span>
+                {{userBios}}
               </p>
         </div>
       </div>  

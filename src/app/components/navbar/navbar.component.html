@@ -8,7 +8,7 @@
     <span class="input-group-btn">
       <button class="btn btn-default" type="button" routerLink="/search"><i class="fa fa-search"></i></button>
     </span>
-    <input type="text" class="form-control" placeholder="Search for...">
+    <input type="text" class="form-control" name="search" [(ngModel)]="userSearch" #search="ngModel" placeholder="Search for...">
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
@@ -21,11 +21,17 @@
         <a class="nav-link">catalog</a>
       </li>
       <span class="separate-vertical"></span>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isLoggedin">
         <a class="nav-link" routerLink="/user/login">signin</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!isLoggedin">
         <a class="nav-link btn btn-success" routerLink="/user/signup">signup</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedin">
+        <a class="nav-link" routerLink="/user/profile">{{userName}}</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedin">
+        <a class="nav-link" (click)="logout()" >Logout</a>
       </li>
     </ul>
   </div>

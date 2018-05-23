@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { request } from 'graphql-request';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -12,9 +13,13 @@ export class SignupComponent implements OnInit {
   userEmail = '';
   userPassword = '';
 
+  signUpData;
+  error;
+  signupMessage;
+
   @ViewChild('form') f: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,23 +35,22 @@ export class SignupComponent implements OnInit {
             id
             name
           }
-          signinUser(authProvider: {
-            email: "${this.userEmail}",
-            password: "${this.userPassword}"
-          })
-          {
-            token
-            user {
-              id
-              name
-            }
-          }
       }`;
-      request('http://192.168.43.226:5000/graphql', query).then((data) => {
-        localStorage.setItem('user', JSON.stringify(data));
+      request('https://itrack-server.herokuapp.com/graphql', query)
+      .then((signUpData) => {
+        localStorage.setItem('data', JSON.stringify(signUpData));
+      })
+      .catch((err) => {
+        this.error = true;
       });
-      console.log('form submitted', this.userName, this.userEmail, this.userPassword);
-      this.f.reset();
+      this.signUpData = JSON.parse(localStorage.getItem('data'));
+      if (this.signUpData != null && this.error !== true) {
+        this.signupMessage = true;
+        // this.router.navigate(['/user/login']);
+      }
+      // console.log('form submitted', this.userName, this.userEmail, this.userPassword);
+      // this.f.reset();
+      // this.router.navigate(['/user/login']);
   }
 }
 

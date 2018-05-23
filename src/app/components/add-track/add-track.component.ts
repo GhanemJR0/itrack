@@ -9,6 +9,21 @@ export class AddTrackComponent implements OnInit {
 
   children: any[];
 
+  trackName;
+  trackDesc;
+  fields = ['ui / ux designer', 'front-end developer', 'back-end developer', 'full stack developer'];
+  technologies;
+  trackReason;
+
+  chapterName;
+  chapterDesc;
+
+  stepName;
+  kinds = ['article', 'video', 'movie'];
+  stepCost;
+  stepLink;
+  stepTime;
+
   constructor() { }
 
   ngOnInit() {

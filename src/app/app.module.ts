@@ -26,19 +26,26 @@ import { TrackSyllabusComponent } from './components/user/track-dashboard/track-
 import { AddSuggestedLinksComponent } from './components/add-suggested-links/add-suggested-links.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { DataService } from './services/data.service';
+import { AuthGuard } from './guards/auth.guard';
+import { EditProfileComponent } from './components/user/edit-profile/edit-profile.component';
+
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent},
-  {path: 'user/profile', component: ProfileComponent},
+  {path: 'user/profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'edit-profile/:id', component: EditProfileComponent, canActivate: [AuthGuard]},
   {path: 'user/signup', component: SignupComponent},
   {path: 'user/login', component: LoginComponent},
-  {path: 'user/track-dashboard', component: TrackDashboardComponent},
-  {path: 'add-track', component: AddTrackComponent},
-  {path: 'track-profile', component: TrackProfileComponent},
-  {path: 'track-profile/add-suggested-links', component: AddSuggestedLinksComponent},
-  {path: 'user/track-dashboard/suggested-links', component: SuggestedLinksComponent},
-  {path: 'user/track-dashboard/track-syllabus', component: TrackSyllabusComponent},
-  {path: 'user/track-dashboard/track-information', component: TrackInformationComponent},
+  {path: 'user/track-dashboard', component: TrackDashboardComponent, canActivate: [AuthGuard]},
+  {path: 'add-track', component: AddTrackComponent, canActivate: [AuthGuard]},
+  {path: 'track-profile', component: TrackProfileComponent, canActivate: [AuthGuard]},
+  {path: 'track-profile/add-suggested-links', component: AddSuggestedLinksComponent, canActivate: [AuthGuard]},
+  {path: 'user/track-dashboard/suggested-links', component: SuggestedLinksComponent, canActivate: [AuthGuard]},
+  {path: 'user/track-dashboard/track-syllabus', component: TrackSyllabusComponent, canActivate: [AuthGuard]},
+  {path: 'user/track-dashboard/track-information', component: TrackInformationComponent, canActivate: [AuthGuard]},
   {path: '**', component: NotFoundComponent}
 ];
 
@@ -63,14 +70,19 @@ const appRoutes: Routes = [
     SuggestedLinksComponent,
     TrackSyllabusComponent,
     AddSuggestedLinksComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FlashMessagesModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    DataService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

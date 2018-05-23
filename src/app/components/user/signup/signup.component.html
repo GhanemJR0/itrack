@@ -3,6 +3,9 @@
 
     <h2>signup</h2>
 
+    <div class="alert alert-danger" role="alert" *ngIf="error">this email already exist</div>
+    <div class="alert alert-success" role="alert" *ngIf="signupMessage">signedup succefully please confirm your email to login</div>
+
     <div class="signup">
 
       <form class="form" #form="ngForm" (ngSubmit)="onSubmit()" novalidate>
@@ -38,16 +41,16 @@
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid">signup</button>
       </form>
 
-      <pre>{{form.value | json}}</pre>
+      <!-- <pre>{{form.value | json}}</pre> -->
 
       <div class="social-signup">
         <h4>or signup by</h4>
-        <a href="#">
+        <!-- <a href="#">
           <i class="fa fa-facebook"></i>
         </a>
         <a href="#">
           <i class="fa fa-google-plus"></i>
-        </a>
+        </a> -->
         <a href="#">
           <i class="fa fa-github"></i>
         </a>

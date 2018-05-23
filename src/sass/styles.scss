@@ -49,3 +49,15 @@ select, option {
       color: #ec1313;
   }
 }
+
+.flash-messages {
+  z-index: 99999;
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 25%;
+  top: 60px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

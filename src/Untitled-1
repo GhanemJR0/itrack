@@ -1,3 +1,19 @@
+mutation {
+  signinUser(authProvider: {
+    email: "abdallah@gmail.com",
+    password: "123456as"
+  })
+  createField(name:"web development", description:"best field ever")
+  {
+    id
+    name
+    description
+  }
+  createTrack(name: "NodeJS", description: "best track ever", fieldID: "1", technologies: "backend,frontend", reasons: "next generation of backend", chapters: [{name: "intro", description: "best chapter ever", steps: [{name: "stepone", kind: Article, cost: 1.63, link: "udemy.com", time: 20}]}]) {
+    name
+  }
+}
+
 <section class="form-wrapper">
   <div class="container">
 
@@ -31,7 +47,7 @@
               <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="info">
-                    <form class="form">
+                    <form class="form" #form="ngForm" (ngSubmit)="onSubmit()">
                       <div class="form-group">
                         <label for="name">track name:</label>
                         <input type="text" class="form-control" name="name" [(ngModel)]="trackName" #name="ngModel" id="name" required>
@@ -52,7 +68,6 @@
                           <option *ngFor="let field of fields" [value]="field">{{field}}</option>
                         </select>
                       </div>
-                    </form>
                   </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -79,26 +94,24 @@
             </div>
             <div class="info-wrapper">
               <div class="info">
-                <form class="form">
-                  <div class="form-group">
-                    <label for="target">who is your target student?</label>
-                    <input type="text" class="form-control" name="target" [(ngModel)]="targetStudent" #target="ngModel" id="target">
+                <div class="form-group">
+                  <label for="target">who is your target student?</label>
+                  <input type="text" class="form-control" name="target" [(ngModel)]="targetStudent" #target="ngModel" id="target">
+                </div>
+                <div class="form-group">
+                  <label for="learn">what will they learn?</label>
+                  <input type="text" class="form-control" name="learn" [(ngModel)]="technologies" #learn="ngModel" id="learn" required>
+                  <div class="form-control-feedback" *ngIf="learn.errors && (learn.dirty || learn.touched)">
+                    <p class="alert alert-danger" *ngIf="learn.errors.required">technologies is required</p>
                   </div>
-                  <div class="form-group">
-                    <label for="learn">what will they learn?</label>
-                    <input type="text" class="form-control" name="learn" [(ngModel)]="technologies" #learn="ngModel" id="learn" required>
-                    <div class="form-control-feedback" *ngIf="learn.errors && (learn.dirty || learn.touched)">
-                      <p class="alert alert-danger" *ngIf="learn.errors.required">technologies is required</p>
-                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="reason">why are you making this track?</label>
+                  <input type="text" class="form-control" name="reason" [(ngModel)]="trackReason" #reason="ngModel" id="reason" required>
+                  <div class="form-control-feedback" *ngIf="reason.errors && (reason.dirty || reason.touched)">
+                    <p class="alert alert-danger" *ngIf="reason.errors.required">reason is required</p>
                   </div>
-                  <div class="form-group">
-                    <label for="reason">why are you making this track?</label>
-                    <input type="text" class="form-control" name="reason" [(ngModel)]="trackReason" #reason="ngModel" id="reason" required>
-                    <div class="form-control-feedback" *ngIf="reason.errors && (reason.dirty || reason.touched)">
-                      <p class="alert alert-danger" *ngIf="reason.errors.required">reason is required</p>
-                    </div>
-                  </div>
-                </form>
+                </div>
                 <a href="#" class="btn btn-primary">next</a>
               </div>
             </div>
@@ -141,7 +154,7 @@
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseStep" aria-expanded="true" aria-controls="collapseStep">
                               step1:
                               <input type="text" class="form-control" name="step" [(ngModel)]="stepName" #step="ngModel" placeholder="step name..." required>
-                              <div class="form-control-feedback" *ngIf="step.errors && (step.dirty || step.touched)">
+                              <div class="form-control-feedb  ack" *ngIf="step.errors && (step.dirty || step.touched)">
                                 <p class="alert alert-danger" *ngIf="step.errors.required">step name is required</p>
                               </div>
                               <i class="fa fa-chevron-down"></i>
@@ -150,35 +163,33 @@
                         </div>
                         <div id="collapseStep" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="stepHeading">
                           <div class="panel-body">
-                            <form class="form">
-                              <div class="form-group">
-                                <label for="kind">kind of step</label>
-                                <select class="form-control" id="kind">
-                                  <option *ngFor="let kind of kinds" [value]="kind">{{kind}}</option>
-                                </select>
+                            <div class="form-group">
+                              <label for="kind">kind of step</label>
+                              <select class="form-control" id="kind">
+                                <option *ngFor="let kind of kinds" [value]="kind">{{kind}}</option>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label for="name">how much will it cost(0 for free)</label>
+                              <input type="text" class="form-control" name="cost" [(ngModel)]="stepCost" #cost="ngModel" required>
+                              <div class="form-control-feedb  ack" *ngIf="cost.errors && (cost.dirty || cost.touched)">
+                                <p class="alert alert-danger" *ngIf="cost.errors.required">step cost is required</p>
                               </div>
-                              <div class="form-group">
-                                <label for="name">how much will it cost(0 for free)</label>
-                                <input type="text" class="form-control" name="cost" [(ngModel)]="stepCost" #cost="ngModel" required>
-                                <div class="form-control-feedback" *ngIf="cost.errors && (cost.dirty || cost.touched)">
-                                  <p class="alert alert-danger" *ngIf="cost.errors.required">step cost is required</p>
-                                </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="name">step's link</label>
+                              <input type="text" class="form-control" name="link" [(ngModel)]="stepLink" #link="ngModel" required>
+                              <div class="form-control-feedb  ack" *ngIf="link.errors && (link.dirty || link.touched)">
+                                <p class="alert alert-danger" *ngIf="link.errors.required">step link is required</p>
                               </div>
-                              <div class="form-group">
-                                <label for="name">step's link</label>
-                                <input type="text" class="form-control" name="link" [(ngModel)]="stepLink" #link="ngModel" required>
-                                <div class="form-control-feedback" *ngIf="link.errors && (link.dirty || link.touched)">
-                                  <p class="alert alert-danger" *ngIf="link.errors.required">step link is required</p>
-                                </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="name">how much time will it take?</label>
+                              <input type="text" class="form-control" name="time" [(ngModel)]="stepTime" #time="ngModel" required>
+                              <div class="form-control-feedb  ack" *ngIf="time.errors && (time.dirty || time.touched)">
+                                <p class="alert alert-danger" *ngIf="time.errors.required">step time is required</p>
                               </div>
-                              <div class="form-group">
-                                <label for="name">how much time will it take?</label>
-                                <input type="text" class="form-control" name="time" [(ngModel)]="stepTime" #time="ngModel" required>
-                                <div class="form-control-feedback" *ngIf="time.errors && (time.dirty || time.touched)">
-                                  <p class="alert alert-danger" *ngIf="time.errors.required">step time is required</p>
-                                </div>
-                              </div>
-                            </form>
+                            </div>
                           </div>
                           <a href="#" class="btn btn-success">
                             <i class="fa fa-plus"></i>
@@ -190,7 +201,8 @@
                   <button class="btn btn-success" (click)="addChapterInputs">add a chapter</button>
                 </div>
               </div>
-              <a href="#" class="btn btn-primary">next</a>
+              <button class="btn btn-primary" [disabled]="form.invalid">submit track</button>
+              </form>
             </div>
           </div>
         </div>
