@@ -25,11 +25,20 @@
         </div> -->
 
         <div class="form-group">
-          <label for="img">image name:</label>
-          <input type="text" class="form-control" name="img" [(ngModel)]="userImg" #img="ngModel" id="img" placeholder="ex. profile.jpg"
-            required>
+          <label for="img">image link:</label>
+          <input type="text" class="form-control" name="img" [(ngModel)]="userImg" #img="ngModel" id="img" placeholder="ex. https://drive.google.com/profile"
+          >
           <div class="form-control-feedback" *ngIf="img.errors && (img.dirty || img.touched)">
             <p class="alert alert-danger" *ngIf="img.errors.required">user image is required</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cover">cover link:</label>
+          <input type="text" class="form-control" name="cover" [(ngModel)]="userCover" #cover="ngModel" id="cover" placeholder="ex. https://drive.google.com/profile"
+          >
+          <div class="form-control-feedback" *ngIf="cover.errors && (cover.dirty || cover.touched)">
+            <p class="alert alert-danger" *ngIf="cover.errors.required">user image is required</p>
           </div>
         </div>
 

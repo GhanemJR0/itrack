@@ -14,6 +14,8 @@ export class EditProfileComponent implements OnInit {
   imgUrl = 'assets/imgs/';
 
   token;
+  client;
+
   id;
   userName;
   userEmail;
@@ -21,10 +23,20 @@ export class EditProfileComponent implements OnInit {
   userImg;
   userCover;
 
+  nameBool = false;
+  emailBool = false;
+  biosBool = false;
+  imgBool = false;
+  coverBool = false;
+
+  userData = [];
+  arr: any[];
+
   @ViewChild('form') f: any;
 
   constructor(public DS: DataService, public flashMessageService: FlashMessagesService, public router: Router) {
     this.token = this.DS.token;
+    this.client = this.DS.client;
     this.id = this.DS.id;
     this.userName = this.DS.userName;
     this.userEmail = this.DS.userEmail;
@@ -39,21 +51,36 @@ export class EditProfileComponent implements OnInit {
   onSubmit () {
     if (this.f.valid) {
 
-      const client = new GraphQLClient('https://itrack-server.herokuapp.com/graphql', {
-        headers: {
-          Authorization: this.token
-        }
-      });
+      if (this.userName !== this.DS.userName) {
+        this.nameBool = true;
+        this.userData.push(this.userName);
+        console.log(this.nameBool);
+      }
+      if (this.userEmail !== this.DS.userEmail) {
+        this.emailBool = true;
+        // this.userData.push(this.userEmail);
+      }
+      if (this.userBios !== this.DS.userBios) {
+        this.biosBool = true;
+        this.userData.push(this.userBios);
+      }
+      if (this.userImg !== this.DS.userImg) {
+        this.imgBool = true;
+        this.userData.push(this.userImg);
+      }
+      if (this.userCover !== this.DS.userCover) {
+        this.coverBool = true;
+        this.userData.push(this.userCover);
+      }
+
+      console.log(this.userData);
+
       const query = ` mutation {
         updateUser(
-          id: "${this.id}",
-          name: "${this.userName}",
-          bios: "${this.userBios}",
-          image: " ${this.userImg}",
-          cover: "${this.userCover}"
+          ${this.userData}
         )
       } `;
-      client.request(query)
+      this.client.request(query)
       .then( res => {
         if (res !== 'FAILED') {
         console.log(res);
@@ -69,9 +96,11 @@ export class EditProfileComponent implements OnInit {
         }
       })
       .catch( err => {
+        this.flashMessageService.show('Failed to update your info', {cssClass: 'alert-danger', timeout: 3000});
         console.log(err.response.errors);
         console.log(err.response.data);
       });
+
     }
   }
 

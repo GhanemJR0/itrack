@@ -36,7 +36,7 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent},
   {path: 'user/profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: 'edit-profile/:id', component: EditProfileComponent, canActivate: [AuthGuard]},
+  {path: 'user/edit-profile/:id', component: EditProfileComponent, canActivate: [AuthGuard]},
   {path: 'user/signup', component: SignupComponent},
   {path: 'user/login', component: LoginComponent},
   {path: 'user/track-dashboard', component: TrackDashboardComponent, canActivate: [AuthGuard]},

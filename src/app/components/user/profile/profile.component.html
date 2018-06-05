@@ -1,139 +1,155 @@
 <section class="profile-wrapper">
   <div class="container">
     <div class="aligned-profile">
-      
+
       <!-- =-=-=-=-=-=-=-=-= 
            =-=-=-=-=-=-=-=-= PERSONAL PROFILE =-=-=-=-=-=-=-=-= -->
       <div class="personal-info">
-          <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
-        <div class="header">
-            <a [routerLink]="['/edit-profile/'+id]" class="btn btn-default">edit profile</a> 
+        <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
+        <div class="header" [style.background-image]="trustedCover">
+          <div class="card-img-overlay">
+            <a [routerLink]="['/user/edit-profile/'+id]" class="btn btn-default">edit profile</a>
             <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <img [src]="trustedImg" alt="profile photo">
-                  </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                  <h2 class="username">{{userName}}</h2>
+                <div class="img-thumbnail">
+                  <img [src]="trustedImg" alt="profile photo">
+                </div>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-12">
-                  <h4 class="user-country">{{userEmail}}</h4>
+                <h2 class="username">{{userName}}</h2>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <h4 class="user-email">{{userEmail}}</h4>
               </div>
             </div>
+          </div>
         </div>
         <!-- =-=-=-=-=-=-=  BOTTOM =-=-=-=-=-=-= -->
         <div class="bottom">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="tracks-progress">
-                        <span><i class="fa fa-trophy"></i> 20</span>
-                        <span><i class="fa fa-flag"></i> 20</span>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="social">
-                        <a href="#"><i class="fa fa-facebook-square"></i></a>
-                        <a href="#"><i class="fa fa-twitter-square"></i></a>
-                        <a href="#"><i class="fa fa-github"></i></a>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="tracks-progress">
+                <span>
+                  <i class="fa fa-trophy"></i> 20</span>
+                <span>
+                  <i class="fa fa-flag"></i> 20</span>
               </div>
-              <p class="bios">
-                <span *ngIf="!userBios" >Bio goes here</span>
-                {{userBios}}
-              </p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="social">
+                <a href="#">
+                  <i class="fa fa-facebook-square"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter-square"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="bios">
+            <span *ngIf="!userBios">Bio goes here</span>
+            {{userBios}}
+          </p>
         </div>
-      </div>  
+      </div>
 
       <!-- =-=-=-=-=-=-=-=-= 
            =-=-=-=-=-=-=-=-= LATEST ACTIVITY =-=-=-=-=-=-=-=-= -->
       <div class="latest-activity">
-          <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
+        <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
         <div class="header">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <h2>latest activity</h2>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <a href="#" class="btn btn-link">see more<i class="fa fa-chevron-right"></i></a>
-                </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <h2>latest activity</h2>
             </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <a href="#" class="btn btn-link">see more
+                <i class="fa fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
         <!-- =-=-=-=-=-=-=  TRACKS STATUS =-=-=-=-=-=-= -->
         <div class="tracks-status">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="track-wrapper">
-                        <h3>project name</h3>
-                        <span>90% completed</span>
-                        <a href="#" class="btn btn-success">enroll now</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="track-wrapper">
-                        <h3>project name</h3>
-                        <span>90% completed</span>
-                        <a href="#" class="btn btn-success">enroll now</a>
-                    </div>
-                </div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="track-wrapper">
+                <h3>project name</h3>
+                <span>90% completed</span>
+                <a href="#" class="btn btn-success">enroll now</a>
+              </div>
             </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="track-wrapper">
+                <h3>project name</h3>
+                <span>90% completed</span>
+                <a href="#" class="btn btn-success">enroll now</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-       <!-- =-=-=-=-=-=-=-=-= 
+      <!-- =-=-=-=-=-=-=-=-= 
            =-=-=-=-=-=-=-=-= RESUME LEARNING =-=-=-=-=-=-=-=-= -->
-           <div class="resume-learning">
-            <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
-          <div class="header">
-            <h2>resume learning</h2>                  
-          </div>
-          <!-- =-=-=-=-=-=-= TRACKS =-=-=-=-=-=-= -->
-          <div class="tracks-wrapper">
-              <div class="row">
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>track name</h3>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                          <a href="#" class="btn btn-link">show</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>project</h3>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                          <a href="#" class="btn btn-link">show</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>project</h3>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                          <a href="#" class="btn btn-link">show</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>project</h3>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                          <a href="#" class="btn btn-link">show</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>project</h3>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
-                          <a href="#" class="btn btn-link">show</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 col-sm-4 col-xs-12">
-                      <div class="track">
-                          <h3>start learning a new thing</h3>
-                          <a href="#"><i class="fa fa-chevron-right"></i></a>
-                      </div>
-                  </div>                  
-              </div>
-              
-          </div>
+      <div class="resume-learning">
+        <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
+        <div class="header">
+          <h2>resume learning</h2>
         </div>
+        <!-- =-=-=-=-=-=-= TRACKS =-=-=-=-=-=-= -->
+        <div class="tracks-wrapper">
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>track name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                <a href="#" class="btn btn-link">show</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>project</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                <a href="#" class="btn btn-link">show</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>project</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                <a href="#" class="btn btn-link">show</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>project</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                <a href="#" class="btn btn-link">show</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>project</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </p>
+                <a href="#" class="btn btn-link">show</a>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="track">
+                <h3>start learning a new thing</h3>
+                <a href="#">
+                  <i class="fa fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
   </div>

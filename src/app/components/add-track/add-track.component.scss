@@ -4,7 +4,7 @@
 .form-wrapper {
   background-color: $color-section-grey;
   margin-top: 88px;
-  .nav-tabs {
+  /* .nav-tabs {
     margin-left: auto;
     margin-right: auto;
     width: 708px;
@@ -34,7 +34,7 @@
         display: none;
       }
     }
-  }
+  } */
   .new-track {
     @include section-styles(#fff, null, 10px, 10px);
     border: 1px solid #000;
@@ -43,30 +43,38 @@
     margin-bottom: 30px;
     .header {
       border-bottom: 1px solid #000;
-      padding-left: 60px;
-      padding-right: 60px;
+      /* padding-left: 60px;
+      padding-right: 60px; */
       h2 {
         @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+        margin-bottom: 3px;
       }
     }
     .info-wrapper {
       padding-top: 20px;
       padding-bottom: 20px;
-      padding-left: 30px;
-      padding-right: 30px;
-      .info {
-        border-radius: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        .form {
-          label {
-            @include font-YanoneKaffeesatz(18px, $color-dark-grey, false, capitalize, 0.4px, false);
-          }
-          select {
-            @include font-YanoneKaffeesatz(17px, $color-dark-grey, false, capitalize, 0.3px, false);
-          }
+      padding-left: 60px;
+      padding-right: 60px;
+      .form {
+        label {
+          @include font-YanoneKaffeesatz(18px, $color-dark-grey, false, capitalize, 0.4px, false);
+          margin-top: 24px;
+          margin-bottom: 0;
         }
-        .upload {
+        select {
+          @include font-YanoneKaffeesatz(17px, $color-dark-grey, false, capitalize, 0.3px, false);
+        }
+        input, textarea {
+          @include font-YanoneKaffeesatz(17px, $color-dark-grey, false, capitalize, 0.5px, false);
+        }
+        ::placeholder {
+          @include font-YanoneKaffeesatz(18px, #666, false, false, 0.4px, false);
+        }
+        .btn-primary {
+          text-transform: capitalize;
+        }
+      }
+      /* .upload {
           @include section-styles($color-section-grey, null, 93px, 16px);
           text-align: center;
           border: 0.4px solid $color-bg-grey;
@@ -82,8 +90,7 @@
             @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
             margin-top: 30px;
           }
-        }
-      }
+        } */
       h3 {
         @include font-YanoneKaffeesatz(null, $color-dark-grey, false, capitalize, 0.3px, false);
         text-align: center;

@@ -1,179 +1,188 @@
 @import '../../../../sass/variables';
 @import '../../../../sass/mixins';
 @import '../../../../sass/placeholders';
-
 .profile-wrapper {
-    background-color: $color-section-grey;
-    margin-top: 55px;
-    .aligned-profile {
-        /* =-=-=-=-=-=-=
+  background-color: $color-section-grey;
+  margin-top: 55px;
+  .aligned-profile {
+    /* =-=-=-=-=-=-=
            =-=-=-=-=-=-= PERSONAL INFO =-=-=-=-=-=-= */
-        .personal-info {
-            border: 1px solid #000;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            .header {
-                @include section-styles($color-accent, null, 23px, 13px);
-                height: 370px;
-                position: relative;
-                a {
-                    @include font-YanoneKaffeesatz(18px, #fff, 600, capitalize, 0.4px, false);
-                    text-align: right;
-                    border: 1px solid #fff;
-                    border-radius: 50px;
-                    position: absolute;
-                    right: 30px;
-                    z-index: 9;
-                }
-                img {
-                    width: 160px;
-                    height: 160px;
-                    border-radius: 100px;
-                    border: 1px solid #000;
-                    margin-top: 243px;
-                    margin-left: 28px;
-                }
-                h2 {
-                    margin-top: 301px;
-                    margin-left: -150px;
-                    @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                }
-                h4 {
-                    margin-top: 310px;
-                    @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                    text-align: right;
-                    padding-right: 40px;
-                }
-            }
-            .bottom {
-                @include section-styles(#fff, null, 13px, 13px);
-                border-top: 1px solid #000;
-                .tracks-progress {
-                    margin-left: 215px;
-                    span {
-                        margin-left: 10px;
-                    }
-                }
-                .social {
-                    text-align: right;
-                    padding-right: 24px;
-                    a {
-                        color: $color-text-link;
-                        i {
-                            font-size: 28px;
-                            margin-right: 11px;
-                            &.fa-slack {
-                                margin-left: 38px;
-                            }
-                        }
-                    }
-                }
-                p.bios {
-                    border-top: 1px solid $color-section-grey;
-                    margin-left: 190px;
-                    margin-right: 190px;
-                    margin-top: 35px;
-                    text-align: center;
-                    padding-top: 20px;
-                }
-            }
+    .personal-info {
+      border: 1px solid #000;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      .header {
+        @include section-styles($color-accent, null, 23px, 13px); // background-image: url('/assets/imgs/bg.jpg');
+        background-size: cover;
+        height: 370px;
+        position: relative;
+        .card-img-overlay {
+          background-color: #68877db3;
         }
-        /* =-=-=-=-=-=-=
-           =-=-=-=-=-=-= LATEST ACTIVITY =-=-=-=-=-=-= */
-        .latest-activity {
-            @include section-styles(#fff, null, 16px, 16px);
-            border: 1px solid #000;
-            border-radius: 10px;
-            margin-top: 60px;
-            .header {
-                border-bottom: 1px solid #000;
-                padding-left: 60px;
-                padding-right: 60px;                
-                h2 {
-                    @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                }
-                .btn-link {
-                    @extend %btn-link;
-                    text-align: right;
-                    float: right;
-                    i{
-                        font-size: 15px;
-                        padding-left: 14px;
-                    }
-                }
-            }
-            .tracks-status {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 30px;
-                padding-right: 30px;
-                .track-wrapper {
-                    @include section-styles($color-section-grey, null, 36px, 16px);
-                    border-radius: 10px;
-                    padding-left: 30px;
-                    padding-right: 30px;
-                    h3 {
-                        @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                    }
-                    span {
-                        @include font-YanoneKaffeesatz(18px, $color-dark-grey, null, capitalize, 0.4px, false);
-                        margin-top: 40px
-                    }
-                    .btn-success {
-                        @extend %btn-success;
-                    }
-                }
-            }
+        a {
+          @include font-YanoneKaffeesatz(18px, #fff, 600, capitalize, 0.4px, false);
+          text-align: right;
+          border: 1px solid #fff;
+          border-radius: 50px;
+          position: absolute;
+          right: 30px;
+          z-index: 9;
         }
-        /* =-=-=-=-=-=-=
-           =-=-=-=-=-=-= RESUME LEARNING =-=-=-=-=-=-= */
-           .resume-learning {
-            @include section-styles(#fff, null, 16px, 16px);
-            border: 1px solid #000;
-            border-radius: 10px;
-            margin-top: 60px;
-            margin-bottom: 60px;
-            .header {
-                border-bottom: 1px solid #000;
-                padding-left: 60px;
-                padding-right: 60px;                
-                h2 {
-                    @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                }
-            }
-            .tracks-wrapper {
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 30px;
-                padding-right: 30px;
-                text-align: center;
-                .track {
-                    @include section-styles($color-section-grey, null, 96px, 16px);
-                    border-radius: 10px;
-                    padding-left: 30px;
-                    padding-right: 30px;
-                    margin-top: 26px;
-                    h3 {
-                        @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
-                        margin-bottom: 30px;
-                    }
-                    p {
-                        @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
-                        padding-left: 20px;
-                        padding-right: 20px;
-                    }
-                    .btn-link {
-                        @extend %btn-link;
-                    }
-                    &:last-child {
-                        height: 307px;
-                        i {
-                            color: $color-dark-grey;
-                            font-size: 28px;
-                        }
-                    }
-                }
-            }
+        .img-thumbnail {
+          width: 173px;
+          height: 172px;
+          position: absolute;
+          bottom: -66px;
+          left: 40px;
+          border-radius: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+          }
         }
+        h2 {
+          margin-top: 301px;
+          margin-left: -150px;
+          @include font-YanoneKaffeesatz(false, #fff, false, capitalize, 0.4px, false);
+        }
+        h4 {
+          margin-top: 310px;
+          @include font-YanoneKaffeesatz(false, #fff, false, capitalize, 0.4px, false);
+          text-align: right;
+          padding-right: 40px;
+        }
+      }
+      .bottom {
+        @include section-styles(#fff, null, 13px, 13px);
+        border-top: 1px solid #000;
+        .tracks-progress {
+          margin-left: 215px;
+          span {
+            margin-left: 10px;
+          }
+        }
+        .social {
+          text-align: right;
+          padding-right: 24px;
+          a {
+            color: $color-text-link;
+            i {
+              font-size: 28px;
+              margin-right: 11px;
+              &.fa-slack {
+                margin-left: 38px;
+              }
+            }
+          }
+        }
+        p.bios {
+          @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, capitalize, 0.4px, false);
+          border-top: 1px solid $color-section-grey;
+          margin-left: 190px;
+          margin-right: 190px;
+          margin-top: 35px;
+          text-align: center;
+          padding-top: 20px;
+        }
+      }
     }
+    /* =-=-=-=-=-=-=
+           =-=-=-=-=-=-= LATEST ACTIVITY =-=-=-=-=-=-= */
+    .latest-activity {
+      @include section-styles(#fff, null, 16px, 16px);
+      border: 1px solid #000;
+      border-radius: 10px;
+      margin-top: 60px;
+      .header {
+        border-bottom: 1px solid #000;
+        padding-left: 60px;
+        padding-right: 60px;
+        h2 {
+          @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+        }
+        .btn-link {
+          @extend %btn-link;
+          text-align: right;
+          float: right;
+          i {
+            font-size: 15px;
+            padding-left: 14px;
+          }
+        }
+      }
+      .tracks-status {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        .track-wrapper {
+          @include section-styles($color-section-grey, null, 36px, 16px);
+          border-radius: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+          h3 {
+            @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+          }
+          span {
+            @include font-YanoneKaffeesatz(18px, $color-dark-grey, null, capitalize, 0.4px, false);
+            margin-top: 40px
+          }
+          .btn-success {
+            @extend %btn-success;
+          }
+        }
+      }
+    }
+    /* =-=-=-=-=-=-=
+           =-=-=-=-=-=-= RESUME LEARNING =-=-=-=-=-=-= */
+    .resume-learning {
+      @include section-styles(#fff, null, 16px, 16px);
+      border: 1px solid #000;
+      border-radius: 10px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      .header {
+        border-bottom: 1px solid #000;
+        padding-left: 60px;
+        padding-right: 60px;
+        h2 {
+          @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+        }
+      }
+      .tracks-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        .track {
+          @include section-styles($color-section-grey, null, 96px, 16px);
+          border-radius: 10px;
+          padding-left: 30px;
+          padding-right: 30px;
+          margin-top: 26px;
+          h3 {
+            @include font-YanoneKaffeesatz(false, $color-dark-grey, false, capitalize, 0.4px, false);
+            margin-bottom: 30px;
+          }
+          p {
+            @include font-YanoneKaffeesatz(19px, $color-dark-grey, false, false, 0.4px, 25px);
+            padding-left: 20px;
+            padding-right: 20px;
+          }
+          .btn-link {
+            @extend %btn-link;
+          }
+          &:last-child {
+            height: 307px;
+            i {
+              color: $color-dark-grey;
+              font-size: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

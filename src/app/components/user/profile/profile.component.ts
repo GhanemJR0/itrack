@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   userCover;
 
   trustedImg;
+  trustedCover;
 
   constructor(private DS: DataService, private _sanitizer: DomSanitizer) {
     this.id = this.DS.id;
@@ -33,10 +34,12 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     if (this.userImg == null) {
-      this.userImg = 'assets/imgs/profile.jpg';
+      this.trustedImg = 'assets/imgs/profile.jpg';
     } else {
       this.trustedImg = this._sanitizer.bypassSecurityTrustUrl(this.userImg);
     }
+
+    this.trustedCover = this._sanitizer.bypassSecurityTrustStyle(`url(${this.userCover})`);
   }
 
 

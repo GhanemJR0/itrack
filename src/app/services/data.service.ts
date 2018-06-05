@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { GraphQLClient } from 'graphql-request';
 
 @Injectable()
 export class DataService {
+
+  serverUrl = 'https://itrack-server.herokuapp.com/graphql';
 
   data;
   isLoggedin;
@@ -14,8 +17,15 @@ export class DataService {
   userImg;
   userCover;
 
+   client;
+
   constructor() {
     this.getUserData ();
+    this.client = new GraphQLClient(this.serverUrl, {
+        headers: {
+          Authorization: this.token
+        }
+      });
    }
 
     getUserData () {
