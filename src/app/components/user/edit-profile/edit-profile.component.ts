@@ -29,7 +29,7 @@ export class EditProfileComponent implements OnInit {
   imgBool = false;
   coverBool = false;
 
-  userData = [];
+  userData = {};
   arr: any[];
 
   @ViewChild('form') f: any;
@@ -53,33 +53,34 @@ export class EditProfileComponent implements OnInit {
 
       if (this.userName !== this.DS.userName) {
         this.nameBool = true;
-        this.userData.push(this.userName);
-        console.log(this.nameBool);
+        this.userData.name = this.userName;
       }
       if (this.userEmail !== this.DS.userEmail) {
         this.emailBool = true;
-        // this.userData.push(this.userEmail);
+        this.userData.email = this.userEmail;
       }
       if (this.userBios !== this.DS.userBios) {
         this.biosBool = true;
-        this.userData.push(this.userBios);
+        this.userData.bios = this.userBios;
       }
       if (this.userImg !== this.DS.userImg) {
         this.imgBool = true;
-        this.userData.push(this.userImg);
+        this.userData.image = this.userImg;
       }
       if (this.userCover !== this.DS.userCover) {
         this.coverBool = true;
-        this.userData.push(this.userCover);
+        this.userData.cover =  this.userCover;
       }
 
       console.log(this.userData);
 
-      const query = ` mutation {
-        updateUser(
-          ${this.userData}
+      const query = `mutation {
+        updateUser(${Object.keys(this.userData).map((key) => `
+            ${key}: "${this.userData[key]}"`
+          ).join(',')}
         )
-      } `;
+      }`;
+      
       this.client.request(query)
       .then( res => {
         if (res !== 'FAILED') {
