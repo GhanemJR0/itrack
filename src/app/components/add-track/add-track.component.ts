@@ -46,7 +46,6 @@ export class AddTrackComponent implements OnInit {
   @ViewChild('form') f: any;
 
   constructor(public DS: DataService, public flashMessageService: FlashMessagesService, public router: Router) {
-    this.serverUrl = this.DS.serverUrl;
     this.token = this.DS.token;
     this.client = this.DS.client;
   }

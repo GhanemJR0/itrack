@@ -1,0 +1,48 @@
+<section class="profile-wrapper">
+  <div class="container">
+
+    <div class="aligned-profile">
+
+      <!-- =-=-=-=-=-=-=-=-= 
+           =-=-=-=-=-=-=-=-= PERSONAL PROFILE =-=-=-=-=-=-=-=-= -->
+      <div class="personal-info">
+        <!-- =-=-=-=-=-=-=  HEADER =-=-=-=-=-=-= -->
+        <div class="header" [style.background-image]="trustedCover">
+          <div class="card-img-overlay">
+            <div class="row">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="img-thumbnail">
+                  <img src="assets/imgs/profile.jpg" alt="profile photo">
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <h2 class="username">{{userName}}</h2>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <h4 class="user-email">{{userEmail}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="manage-panel-wrapper">
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" routerLink="/admin/manage-users">list users</button>
+        <button type="button" class="btn btn-secondary" routerLink="/admin/manage-fields">all fields</button>
+        <button type="button" class="btn btn-secondary" routerLink="/admin/manage-tracks">all tracks</button>
+        <button type="button" class="btn btn-secondary" routerLink="/admin/manage-requests">pend requests</button>
+      </div>
+
+      <div class="manage-panel">
+
+      </div>
+
+    </div>
+
+
+  </div>
+</section>

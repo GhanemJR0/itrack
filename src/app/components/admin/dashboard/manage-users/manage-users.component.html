@@ -1,0 +1,45 @@
+<section class="users-wrapper">
+  <div class="container">
+
+    <app-dashboard></app-dashboard>
+
+    <div id="main">
+      <h1 class="sec-title text-center">
+        all users
+      </h1>
+
+      <div *ngIf="users?.length>0 ; else elseBlock">
+        <table class="table table-bordered table-dark">
+          <thead>
+            <tr>
+              <th scope="col">user id</th>
+              <th scope="col">user name</th>
+              <th scope="col">user email</th>
+              <th scope="col">actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>
+                <a [routerLink]="[]" class="btn btn-info">
+                  <i class="fa fa-info-circle"></i> Edit
+                </a>
+                <button href="#" (click)="delete(user.id)" class="btn btn-danger">
+                  <i class="fa fa-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #elseBlock>
+        <h2 class="text-info">No Users Yet</h2>
+      </ng-template>
+
+    </div>
+  </div>
+</section>

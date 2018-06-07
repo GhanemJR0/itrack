@@ -4,11 +4,17 @@ import { request, GraphQLClient } from 'graphql-request';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
+interface LooseObject {
+  [key: string]: any;
+}
+
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
   styleUrls: ['./edit-profile.component.scss']
 })
+
+
 export class EditProfileComponent implements OnInit {
 
   imgUrl = 'assets/imgs/';
@@ -29,7 +35,7 @@ export class EditProfileComponent implements OnInit {
   imgBool = false;
   coverBool = false;
 
-  userData = {};
+  userData: {[k: string]: any} = {};
   arr: any[];
 
   @ViewChild('form') f: any;
@@ -37,7 +43,7 @@ export class EditProfileComponent implements OnInit {
   constructor(public DS: DataService, public flashMessageService: FlashMessagesService, public router: Router) {
     this.token = this.DS.token;
     this.client = this.DS.client;
-    this.id = this.DS.id;
+    this.userData.id = this.DS.id;
     this.userName = this.DS.userName;
     this.userEmail = this.DS.userEmail;
     this.userBios = this.DS.userBios;
@@ -80,15 +86,16 @@ export class EditProfileComponent implements OnInit {
           ).join(',')}
         )
       }`;
-      
+
       this.client.request(query)
       .then( res => {
         if (res !== 'FAILED') {
         console.log(res);
-        this.DS.userName = this.userName;
-        this.DS.userBios = this.userBios;
-        this.DS.userImg = this.userImg;
-        this.DS.userCover = this.userCover;
+        this.DS.userName = this.userData.userName;
+        this.DS.userEmail = this.userData.userEmail;
+        this.DS.userBios = this.userData.userBios;
+        this.DS.userImg = this.userData.userImg;
+        this.DS.userCover = this.userData.userCover;
         this.flashMessageService.show('Your info updated Succefully', {cssClass: 'alert-success', timeout: 3000});
         this.router.navigate(['/user/profile']);
         } else {

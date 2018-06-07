@@ -1,0 +1,16 @@
+@import '../../../../../sass/variables';
+@import '../../../../../sass/mixins';
+@import '../../../../../sass/placeholders';
+.users-wrapper {
+  h1.sec-title {
+    @include font-YanoneKaffeesatz(false, $color-text-link, 600, capitalize, 0.4px, false);
+    margin-top: 60px;
+  }
+  table {
+    text-align: center;
+    th,
+    td {
+      @include font-YanoneKaffeesatz(18px, #fff, 600, capitalize, 0.4px, false);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { GraphQLClient } from 'graphql-request';
 @Injectable()
 export class DataService {
 
-  serverUrl = 'https://itrack-server.herokuapp.com/graphql';
+  endPoint = 'https://itrack-server.herokuapp.com/graphql';
 
   data;
   isLoggedin;
@@ -21,7 +21,7 @@ export class DataService {
 
   constructor() {
     this.getUserData ();
-    this.client = new GraphQLClient(this.serverUrl, {
+    this.client = new GraphQLClient(this.endPoint, {
         headers: {
           Authorization: this.token
         }
