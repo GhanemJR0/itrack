@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../../services/data.service';
-import { request } from 'graphql-request';
-import { element } from 'protractor';
 
 @Component({
   selector: 'app-manage-users',

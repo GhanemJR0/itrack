@@ -8,15 +8,13 @@ import { DataService } from '../../../services/data.service';
 })
 export class DashboardComponent implements OnInit {
 
-  token;
   userName;
   userEmail;
 
   constructor(public DS: DataService) {
-    this.token = this.DS.token;
     this.userName = this.DS.userName;
     this.userEmail = this.DS.userEmail;
-   }
+  }
 
   ngOnInit() {
   }

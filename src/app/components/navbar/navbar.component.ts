@@ -11,6 +11,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class NavbarComponent implements OnInit {
 
+  endPoint;
   isLoggedin;
   userName;
   userEmail;
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
     public activatedRouter: ActivatedRoute,
     public DS: DataService,
     public flashMessageService: FlashMessagesService) {
+      this.endPoint = this.DS.endPoint;
     this.userName = this.DS.userName;
     this.userEmail = this.DS.userEmail;
     this.isLoggedin = this.DS.isLoggedin;
@@ -28,11 +30,19 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  sendMeHome() {
+    if (this.userEmail === 'abdallah@gmail.com') {
+      this.router.navigate(['/admin/dashboard']);
+    } else {
+      this.router.navigate(['/user/profile']);
+    }
+  }
+
   logout () {
     const query = `mutation {
       signoutUser
     }`;
-    request('https://itrack-server.herokuapp.com/graphql', query);
+    request(this.endPoint, query);
     this.isLoggedin = false;
     localStorage.removeItem('userData');
     this.router.navigate(['/']);

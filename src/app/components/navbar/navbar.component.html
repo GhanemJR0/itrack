@@ -28,7 +28,7 @@
         <a class="nav-link btn btn-success" routerLink="/user/signup">signup</a>
       </li>
       <li class="nav-item" *ngIf="isLoggedin">
-        <a class="nav-link" routerLink="/user/profile">{{userName}}</a>
+        <a class="nav-link" (click)="sendMeHome()"  >{{userName}}</a>
       </li>
       <li class="nav-item" *ngIf="isLoggedin">
         <a class="nav-link" (click)="logout()" >Logout</a>
